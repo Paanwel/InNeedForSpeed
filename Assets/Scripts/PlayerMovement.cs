@@ -43,7 +43,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Cars")
+        if(collision.gameObject.name == "Car")
         Debug.Log("Kolizja!!!!!!!!!!");
+
+        if (collision.gameObject.name == "Car 1")
+            Debug.Log("Kolizja!!!!!!!!!!");
+
+        if (collision.gameObject.name == "Car 2")
+            Debug.Log("Kolizja!!!!!!!!!!");
     }
 }
