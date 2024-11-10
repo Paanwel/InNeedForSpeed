@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -38,8 +39,18 @@ public class PlayerMovement : MonoBehaviour
     {
         // unity inbuild feature
         Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, -2.71f, 2.8f);
-        transform.position = pos;
+        pos.x = Mathf.Clamp(pos.x, 90f, 1100f);
+        transform.position = pos; 
+      
+        
+        /* if(transform.position.x < 90f)
+        {
+            transform.position = new Vector3(90f, transform.position.y, transform.position.z);
+        }
+        if(transform.position.x > 1100f)
+        {
+            transform.position = new Vector3(1100f, transform.position.y, transform.position.z);
+        } */
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -16,5 +16,7 @@ public class OtherCarMovement : MonoBehaviour
     void Update()
     {
         transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
+
+       
     }
 }
