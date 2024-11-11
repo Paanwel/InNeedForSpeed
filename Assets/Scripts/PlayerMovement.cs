@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         if (Input.GetKey(KeyCode.A))
         {
@@ -34,27 +34,29 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), rotationSpeed * Time.deltaTime);
         }
+        Clamp();
     }
     void Clamp()
     {
-        // unity inbuild feature
+        
         Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, 90f, 1100f);
+        pos.x = Mathf.Clamp(pos.x, -0.67f, 0.26f);
         transform.position = pos; 
       
         
-        /* if(transform.position.x < 90f)
-        {
-            transform.position = new Vector3(90f, transform.position.y, transform.position.z);
-        }
-        if(transform.position.x > 1100f)
-        {
-            transform.position = new Vector3(1100f, transform.position.y, transform.position.z);
-        } */
+        
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Cars")
-        Debug.Log("Kolizja!!!!!!!!!!");
+        {
+            //Time.timeScale = 0;
+        }
+
+        if (collision.gameObject.tag == "Coin")
+        {
+            Destroy(collision.gameObject);
+        }
+
     }
 }

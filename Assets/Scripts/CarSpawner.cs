@@ -20,7 +20,7 @@ public class CarSpawner : MonoBehaviour
     void Cars()
     {
         int rand = Random.Range(0, car.Length);
-        float randXPos = Random.Range(-0.4f, 0.4f);
+        float randXPos = Random.Range(-0.67f, 0.26f);
         Instantiate(car[rand], new Vector3(randXPos, transform.position.y, transform.position.z), Quaternion.Euler(0, 0, 0));
     }
 
