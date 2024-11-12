@@ -23,7 +23,7 @@ public class Score_Manager : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(0.8f);
+            yield return new WaitForSeconds(1);
             score = score + 1;
             Debug.Log("Score: " + score);
         }

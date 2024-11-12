@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, -0.67f, 0.26f);
+        pos.x = Mathf.Clamp(pos.x, -0.77f, 0.26f);
         transform.position = pos; 
       
         
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Cars")
         {
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
         }
 
         if (collision.gameObject.tag == "Coin")

@@ -20,7 +20,7 @@ public class CarSpawner : MonoBehaviour
     void Cars()
     {
         int rand = Random.Range(0, car.Length);
-        float randXPos = Random.Range(-0.67f, 0.26f);
+        float randXPos = Random.Range(-0.7f, 0.20f);
         Instantiate(car[rand], new Vector3(randXPos, transform.position.y, transform.position.z), Quaternion.Euler(0, 0, 0));
     }
 
@@ -28,8 +28,9 @@ public class CarSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(3.4f);
             Cars();
         }
     }
+
 }
