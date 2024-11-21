@@ -10,11 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public Transform transform;
     public float speed = 5.0f;
     public float rotationSpeed = 4.0f;
+    public GameObject gameOverPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameOverPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Cars")
         {
+
+            gameOverPanel.SetActive(true);
+            Debug.Log("Crash");
             Time.timeScale = 0;
         }
 
