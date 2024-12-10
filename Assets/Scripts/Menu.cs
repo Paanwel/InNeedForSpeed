@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
     private Button startButton;
 
     [SerializeField]
-    private CanvasGroup mainScreen, settingsScreen;
+    private CanvasGroup mainScreen, settingsScreen, creditsScreen;
 
 
 
@@ -25,7 +25,11 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-
+    public void ToggleCredits(bool enabled)
+    {
+        mainScreen.gameObject.SetActive(!enabled);
+        creditsScreen.gameObject.SetActive(enabled);
+    }
     public void ToggleSettings(bool enabled)
     {
         mainScreen.gameObject.SetActive(!enabled);
