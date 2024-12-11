@@ -26,4 +26,9 @@ public class Restart : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void BackMenu()
+    {
+        SceneManager.LoadScene("MenuGlowne");
+    }
 }
