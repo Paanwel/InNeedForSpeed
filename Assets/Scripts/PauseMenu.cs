@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool isPaused = false; // Czy gra jest wstrzymana
-    public GameObject pauseMenuUI;      // Panel pauzy
+    public static bool isPaused = false; 
+    public GameObject pauseMenuUI;      
 
     void Update()
     {
-        // Sprawdzenie, czy gracz nacisn¹³ klawisz pauzy (domyœlnie Esc)
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -24,27 +24,27 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);      // Ukryj menu pauzy
-        Time.timeScale = 1f;               // Wznów czas gry
-        isPaused = false;                  // Ustaw flaga pauzy na false
+        pauseMenuUI.SetActive(false);      
+        Time.timeScale = 1;             
+        isPaused = false;                  
     }
 
     void Pause()
     {
-        pauseMenuUI.SetActive(true);       // Poka¿ menu pauzy
-        Time.timeScale = 0f;               // Zatrzymaj czas gry
-        isPaused = true;                   // Ustaw flaga pauzy na true
+        pauseMenuUI.SetActive(true);       
+        Time.timeScale = 0;             
+        isPaused = true;                  
     }
 
     public void LoadMainMenu()
     {
-        Time.timeScale = 1f;               // Przywróæ normalny czas gry
-        SceneManager.LoadScene("MainMenu"); // Za³aduj g³ówne menu (upewnij siê, ¿e scena istnieje)
+        Time.timeScale = 1;               
+        SceneManager.LoadScene("MenuGlowne"); 
     }
 
     public void QuitGame()
     {
-        Debug.Log("Gra zakoñczona!");      // Informacja w edytorze
-        Application.Quit();                // Zamkniêcie gry w wersji build
+        Debug.Log("Gra zakoñczona!");      
+        Application.Quit();                
     }
 }
