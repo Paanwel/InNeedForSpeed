@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //te zmienne nie muszą być publiczne
     public Transform transform;
     public float speed = 5.0f;
     public float rotationSpeed = 4.0f;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
             transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, -47), rotationSpeed * Time.deltaTime);
         }
+
         if (transform.rotation.z !=90)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), rotationSpeed * Time.deltaTime);
@@ -42,12 +44,10 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, -0.77f, 0.26f);
+        pos.x = Mathf.Clamp(pos.x, -0.77f, 0.26f); //magic numbers
         transform.position = pos; 
-      
-        
-        
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Cars")
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
             gameOverPanel.SetActive(true);
             Debug.Log("Crash");
-            Time.timeScale = 0;
+            Time.timeScale = 0; //time scale porozrzucany po kilku skryptach może utrudnić debugowanie. Najlepiej jakby czas kontrolowal tylko jeden skrypt np GameManager 
         }
 
         if (collision.gameObject.tag == "Coin")

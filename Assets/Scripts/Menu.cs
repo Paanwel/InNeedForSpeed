@@ -15,27 +15,27 @@ public class Menu : MonoBehaviour
     private Button startButton;
 
     [SerializeField]
-    private CanvasGroup mainScreen, settingsScreen, creditsScreen;
-
-
-
+    private CanvasGroup mainScreen, 
+        settingsScreen, 
+        creditsScreen;
 
     public void StartGame()
     {
         SceneManager.LoadScene(sceneName);
     }
    
-
     public void ToggleCredits(bool enabled)
     {
         mainScreen.gameObject.SetActive(!enabled);
         creditsScreen.gameObject.SetActive(enabled);
     }
+
     public void ToggleSettings(bool enabled)
     {
         mainScreen.gameObject.SetActive(!enabled);
         settingsScreen.gameObject.SetActive(enabled);
     }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -43,6 +43,7 @@ public class Menu : MonoBehaviour
         EditorApplication.isPlaying = false;
 #endif
     }
+
     private void Awake()
     {
         if(startButton != null)
@@ -57,5 +58,4 @@ public class Menu : MonoBehaviour
             QuitGame();
         }
     }
-
 }

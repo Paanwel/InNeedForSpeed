@@ -1,14 +1,14 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    //przy małych projektach zmienna statyczna jest okej, przy dużych to jest szybka droga do spagetti code. Nie nadużywaj zmiennych statycznych w tym singletonów
     public static bool isPaused = false; 
     public GameObject pauseMenuUI;      
 
     void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Gra zako�czona!");      
+        Debug.Log("Gra zakoñczona!");      
         Application.Quit();                
     }
 }
