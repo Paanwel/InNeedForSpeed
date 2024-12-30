@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarSpawner2 : MonoBehaviour
+public class CarSpawner2 : MonoBehaviour //po co ci zduplikowany skrypt? 
 {
 
     public GameObject[] car;

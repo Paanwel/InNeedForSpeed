@@ -17,7 +17,7 @@ public class OtherCarMovement : MonoBehaviour
     {
         transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
 
-        if(transform.position.y <= -3)
+        if(transform.position.y <= -3) //magic number
         {
             Destroy(gameObject);
         }
