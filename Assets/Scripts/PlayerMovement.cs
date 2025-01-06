@@ -7,10 +7,18 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     public Transform transform;
     public float speed = 5.0f;
     public float rotationSpeed = 4.0f;
     public GameObject gameOverPanel;
+
+    AudioMenager audioMenager;
+
+    private void Awake()
+    {
+        audioMenager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioMenager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Cars")
         {
-
+            audioMenager.PlaySFX(audioMenager.death);
             gameOverPanel.SetActive(true);
             Debug.Log("Crash");
             Time.timeScale = 0;
@@ -60,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "Coin")
         {
+            audioMenager.PlaySFX(audioMenager.coin);
             Destroy(collision.gameObject);
         }
 

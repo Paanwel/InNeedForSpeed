@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cars
   - Coin
+  - Audio
   layers:
   - Default
   - TransparentFX
