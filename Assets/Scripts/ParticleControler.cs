@@ -5,22 +5,23 @@ using UnityEngine;
 public class ParticleControler : MonoBehaviour
 {
     [SerializeField] ParticleSystem movementParticle;
-    [SerializeField] int occurAfterVelocity;
 
     [Range(0, 10)]
-    [SerializeField] float dustFormationPeriod;
+    [SerializeField] int occurAfterVelocity;
+
+    [Range(0, 0.2f)]
+    [SerializeField] float particleFormationPeriod;
 
     [SerializeField] Rigidbody2D playerRb;
 
     float counter;
-
     private void Update()
     {
         counter += Time.deltaTime;
 
         if (Mathf.Abs(playerRb.velocity.x) > occurAfterVelocity)
         {
-            if (counter > dustFormationPeriod)
+            if (counter > particleFormationPeriod)
             {
                 movementParticle.Play();
                 counter = 0;

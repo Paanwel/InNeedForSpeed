@@ -12,6 +12,7 @@ public class AudioMenager : MonoBehaviour
     public AudioClip death;
     public AudioClip background;
     public AudioClip coin;
+    public AudioClip quit;
 
     private void Start()
     {

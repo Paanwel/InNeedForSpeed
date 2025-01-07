@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+
     public Transform transform;
     public float speed = 5.0f;
     public float rotationSpeed = 4.0f;
