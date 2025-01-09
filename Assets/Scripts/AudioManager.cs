@@ -1,18 +1,23 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class AudioMenager : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
+
+    public AudioSource audioSource;
+
     [Header("Audio Source")]
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SFXSource;
+    [SerializeField] AudioSource sfxSource;
 
     [Header("Audio Clip")]
-    public AudioClip horn;
-    public AudioClip death;
     public AudioClip background;
+    public AudioClip death;
+    public AudioClip button;
     public AudioClip coin;
-    public AudioClip quit;
 
     private void Start()
     {
@@ -20,9 +25,13 @@ public class AudioMenager : MonoBehaviour
         musicSource.Play();
     }
 
+  
+
     public void PlaySFX(AudioClip clip)
     {
-        SFXSource.PlayOneShot(clip);
+        sfxSource.PlayOneShot(clip);
     }
+   
+
 
 }

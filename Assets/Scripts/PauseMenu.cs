@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
    
     public static bool isPaused = false; 
-    public GameObject pauseMenuUI;      
+    public GameObject pauseMenuUI;
+    public AudioSource audioSource;
+
 
     void Update()
     {
@@ -14,13 +17,15 @@ public class PauseMenu : MonoBehaviour
         {
             if (isPaused)
             {
-                Resume();
                 
+                Resume();
+                audioSource.Play();
             }
             else
             {
+                
                 Pause();
-               
+                audioSource.Pause();
             }
         }
     }
@@ -29,7 +34,8 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);      
         Time.timeScale = 1;             
-        isPaused = false;                  
+        isPaused = false;
+        audioSource.Play();
     }
 
     void Pause()

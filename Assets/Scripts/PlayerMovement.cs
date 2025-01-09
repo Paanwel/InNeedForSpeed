@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 
@@ -13,11 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 4.0f;
     public GameObject gameOverPanel;
 
-    AudioMenager audioMenager;
+    AudioManager audioManager;
+    public AudioSource audioSource;
 
     private void Awake()
     {
-        audioMenager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioMenager>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Start is called before the first frame update
@@ -60,15 +62,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Cars")
         {
-            audioMenager.PlaySFX(audioMenager.death);
+            audioManager.PlaySFX(audioManager.death);
             gameOverPanel.SetActive(true);
             Debug.Log("Crash");
             Time.timeScale = 0;
+            audioSource.Pause();
         }
 
         if (collision.gameObject.tag == "Coin")
         {
-            audioMenager.PlaySFX(audioMenager.coin);
+            audioManager.PlaySFX(audioManager.coin);
             Destroy(collision.gameObject);
         }
 
