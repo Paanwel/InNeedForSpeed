@@ -19,7 +19,7 @@ public class Coin_Spawner : MonoBehaviour
 
     void CoinSpawn()
     {
-        float randXPos = Random.Range(-0.06f, 0.26f);
+        float randXPos = Random.Range(-0.77f, 0.26f);
         Instantiate(coinPrefab, new Vector3(randXPos, transform.position.y, -0.001f), Quaternion.Euler(0, 0, 0));
     }
 

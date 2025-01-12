@@ -1340,6 +1340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 267972510}
   - component: {fileID: 267972511}
+  - component: {fileID: 267972512}
   m_Layer: 0
   m_Name: music
   m_TagString: Untagged
@@ -1414,7 +1415,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1173882572}
   m_HandleRect: {fileID: 217909868}
   m_Direction: 0
-  m_MinValue: 0.00001
+  m_MinValue: 0.001
   m_MaxValue: 2
   m_WholeNumbers: 0
   m_Value: 1
@@ -1433,6 +1434,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &267972512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267972509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c50ea9a9569ac4ea5c22d6fee89453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValue: {fileID: 11400000, guid: 1df2f33c7ac2c1b4dbe21fd0c90dbd03, type: 2}
+  sliderOne: {fileID: 267972511}
 --- !u!1 &292730933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,6 +2735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 707355116}
   - component: {fileID: 707355117}
+  - component: {fileID: 707355118}
   m_Layer: 0
   m_Name: master
   m_TagString: Untagged
@@ -2794,10 +2810,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 131645240}
   m_HandleRect: {fileID: 2080189866}
   m_Direction: 0
-  m_MinValue: 0.00001
-  m_MaxValue: 10
+  m_MinValue: 0.001
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2813,6 +2829,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &707355118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707355115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6922738a2eb98043b60a1988fc7bb26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValue: {fileID: 11400000, guid: 1df2f33c7ac2c1b4dbe21fd0c90dbd03, type: 2}
+  sliderOne: {fileID: 707355117}
 --- !u!1001 &771798658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3246,6 +3276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 795434076}
   - component: {fileID: 795434077}
+  - component: {fileID: 795434078}
   m_Layer: 0
   m_Name: sfx
   m_TagString: Untagged
@@ -3320,7 +3351,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 316025914}
   m_HandleRect: {fileID: 1116442610}
   m_Direction: 0
-  m_MinValue: 0.00001
+  m_MinValue: 0.001
   m_MaxValue: 2
   m_WholeNumbers: 0
   m_Value: 1
@@ -3339,6 +3370,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &795434078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795434075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73dcbf92e802114c8540537a453d7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValue: {fileID: 11400000, guid: 1df2f33c7ac2c1b4dbe21fd0c90dbd03, type: 2}
+  sliderOne: {fileID: 795434077}
 --- !u!1 &813875419
 GameObject:
   m_ObjectHideFlags: 0
@@ -4388,10 +4433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a164532e9e6f845a8b3ab3130999d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMixer: {fileID: 24100000, guid: bc943210a9fdc804699c74b39e698b70, type: 2}
+  audioMixer: {fileID: 24100000, guid: bc943210a9fdc804699c74b39e698b70, type: 2}
   musicSlider: {fileID: 267972511}
-  sfxSlider: {fileID: 795434077}
   masterSlider: {fileID: 707355117}
+  sfxSlider: {fileID: 795434077}
 --- !u!1 &1106666966
 GameObject:
   m_ObjectHideFlags: 0
