@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5.0f;
     public float rotationSpeed = 4.0f;
     public GameObject gameOverPanel;
+    public bool GameOver;
+    
 
     AudioManager audioManager;
     public AudioSource audioSource;
@@ -42,6 +44,17 @@ public class PlayerMovement : MonoBehaviour
             transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, -47), rotationSpeed * Time.deltaTime);
         }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 47), rotationSpeed * Time.deltaTime);
+
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, -47), rotationSpeed * Time.deltaTime);
+        }
         if (transform.rotation.z !=90)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), rotationSpeed * Time.deltaTime);
@@ -62,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Cars")
         {
+            GameOver = true;
             audioManager.PlaySFX(audioManager.death);
             gameOverPanel.SetActive(true);
             Debug.Log("Crash");

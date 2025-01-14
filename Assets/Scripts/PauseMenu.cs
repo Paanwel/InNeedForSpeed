@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
    
-    public static bool isPaused = false; 
+    public static bool isPaused = false;
     public GameObject pauseMenuUI;
     public AudioSource audioSource;
-
+    [SerializeField] private PlayerMovement playerMovement;
 
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (Input.GetKeyDown(KeyCode.Escape) && playerMovement.GameOver == false)
         {
             if (isPaused)
             {
@@ -56,6 +56,10 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Gra zakoñczona!");      
         Application.Quit();                
     }
+    private void Awake()
+    {
+        playerMovement = FindObjectOfType<PlayerMovement>();
+    }
 
-   
+
 }

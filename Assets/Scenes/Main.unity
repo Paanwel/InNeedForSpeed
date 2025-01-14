@@ -3380,6 +3380,7 @@ MonoBehaviour:
   speed: 1
   rotationSpeed: 4
   gameOverPanel: {fileID: 1486925982}
+  GameOver: 0
   audioSource: {fileID: 241929579}
 --- !u!61 &1659987156
 BoxCollider2D:
@@ -4291,6 +4292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 57771761}
   audioSource: {fileID: 241929579}
+  playerMovement: {fileID: 0}
 --- !u!4 &2114974064
 Transform:
   m_ObjectHideFlags: 0
